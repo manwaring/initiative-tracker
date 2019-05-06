@@ -7,7 +7,9 @@
     "deploy-domain": "sls create_domain",
     "remove-domain": "sls delete_domain",
     "pregenerate-swagger": "echo 'Generating json swagger docs for API documentation from docs/swagger.yml'",
-    "generate-swagger": "yaml2json docs/swagger.yml --save"
+    "generate-swagger": "yaml2json docs/swagger.yml --save",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@iopipe/iopipe": "1.12.8",
@@ -16,7 +18,8 @@
     "@slack/client": "^4.12.0",
     "nanoid": "^2.0.1",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.23",
@@ -50,5 +53,6 @@
         }
       ]
     ]
-  }
+  },
+  "snyk": true
 }
